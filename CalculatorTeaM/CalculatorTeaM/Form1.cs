@@ -38,6 +38,24 @@ namespace CalculatorTeaM
 
         private Boolean fd;
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Visible = true;
+            label2.Visible = true;
+            label1.Visible = false;
+            button2.Visible = true;
+            button1.Enabled = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
+            textBox1.Visible = false;
+            label2.Visible = false;
+            label1.Text = "";
+            label1.Visible = true;
+            button2.Visible = false;
+        }
 
         public Form1()
         {
