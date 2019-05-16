@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace CalculatorTeaM
 {
     public partial class Form1 : Form
@@ -17,7 +19,7 @@ namespace CalculatorTeaM
         private const int dx = 19, dy = 21; 
 
     
-        private Button[] btn = new Button[15];
+        public Button[] btn = new Button[15];
 
      
         char[] btnText = {'7','8','9','+',
@@ -32,12 +34,33 @@ namespace CalculatorTeaM
                         0,-1,-5};   
 
         private double ac = 0; 
-        private int op = 0;    
+        private int op = 0;
+        public int z = 0; 
+        public bool ch1=false;   
 
         
 
         private Boolean fd;
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Visible = true;
+            label2.Visible = true;
+            label1.Visible = false;
+            button2.Visible = true;
+            button1.Enabled = false;
+            ch1 = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
+            textBox1.Visible = false;
+            label2.Visible = false;
+            label1.Text = "";
+            label1.Visible = true;
+            button2.Visible = false;
+        }
 
         public Form1()
         {
@@ -139,11 +162,17 @@ namespace CalculatorTeaM
 
             if (Convert.ToInt32(btn.Tag) < -1)
             {
-                double n; 
+                double n;
+
+                z = Convert.ToInt32(btn.Tag);
 
                 n = Convert.ToDouble(label1.Text);
 
-         
+                if (ch1 == true)
+                {
+                    test();
+                }
+                
                 if (ac != 0)
                 {
                     switch (op)
