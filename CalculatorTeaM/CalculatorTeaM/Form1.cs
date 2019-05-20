@@ -50,6 +50,7 @@ namespace CalculatorTeaM
             label1.Visible = false;
             button2.Visible = true;
             button1.Enabled = false;
+            label4.Visible = true;
             ch1 = true;
         }
 
@@ -193,6 +194,11 @@ namespace CalculatorTeaM
 
         private void Button_Click(object sender, System.EventArgs e)
         {
+            if (ch1 == true)
+            {
+                test();
+            }
+
             Button btn = (Button)sender;
 
             if (Convert.ToInt32(btn.Tag) > 0)
@@ -226,10 +232,7 @@ namespace CalculatorTeaM
 
                 n = Convert.ToDouble(label1.Text);
 
-                if (ch1 == true)
-                {
-                    test();
-                }
+                
                 
                 if (ac != 0)
                 {
