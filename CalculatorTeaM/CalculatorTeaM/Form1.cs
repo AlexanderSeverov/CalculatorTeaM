@@ -10,13 +10,14 @@ using System.Windows.Forms;
 
 
 
+
 namespace CalculatorTeaM
 {
     public partial class Form1 : Form
     {
 
         private const int bw = 50, bh = 50; 
-        private const int dx = 19, dy = 21; 
+        private const int dx = 19, dy = 17; 
 
     
         public Button[] btn = new Button[15];
@@ -62,6 +63,63 @@ namespace CalculatorTeaM
             button2.Visible = false;
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            double tmp = 0, tmp1 = 0;
+
+            tmp = Convert.ToDouble(label1.Text);
+            label1.Text = "";
+            tmp1 = Math.Sin(tmp);
+            label1.Text = Convert.ToString(tmp1);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            double tmp = 0,tmp1=0;
+
+            tmp = Convert.ToDouble(label1.Text);
+            label1.Text = "";
+            tmp1 = Math.Cos(tmp);
+            label1.Text = Convert.ToString(tmp1);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            double tmp = 0, tmp1 = 0;
+
+            tmp = Convert.ToDouble(label1.Text);
+            label1.Text = "";
+            tmp1 = Math.Sqrt(tmp);
+            label1.Text = Convert.ToString(tmp1);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            double tmp = 0, tmp1 = 0,tmp2=0;
+
+            tmp = Convert.ToDouble(label1.Text);
+
+            tmp1 = Convert.ToDouble(textBox2.Text);
+            tmp2 = Math.Pow(tmp,tmp1);
+
+            label1.Text = Convert.ToString(tmp2);
+
+            textBox2.Text = "";
+
+            textBox2.Visible = false;
+            label3.Visible = false;
+
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            button6.Visible = true;
+
+            textBox2.Visible = true;
+            label3.Visible = true;
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -72,7 +130,7 @@ namespace CalculatorTeaM
             int x, y;
 
 
-            this.ClientSize = new Size(10 * bw + 10 * dx, 10 * bh + 10 * dy);
+            this.ClientSize = new Size(10 * bw + 10 * dx, 9 * bh +  dy);
 
 
             label1.SetBounds(dx, dy, 8 * bw + 7 * dx, bh);
