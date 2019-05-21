@@ -22,24 +22,26 @@ namespace CalculatorTeaM
     
         public Button[] btn = new Button[15];
 
-     
-        char[] btnText = {'7','8','9','+',
+
+        char[] btnText = {
+                          '7','8','9','+',
                           '4','5','6','-',
                           '1','2','3','=',
                           '0',',','c'};
 
-       
-        int[] btnTag = {7,8,9,-3,
+
+        int[] btnTag = {
+                        7,8,9,-3,
                         4,5,6,-4,
                         1,2,3,-2,
-                        0,-1,-5};   
+                        0,-1,-5};
 
         private double ac = 0; 
         private int op = 0;
         public int z = 0; 
-        public bool ch1=false;   
+        public bool ch1=false;
 
-        
+        Boolean w;
 
         private Boolean fd;
 
@@ -109,8 +111,6 @@ namespace CalculatorTeaM
 
             textBox2.Visible = false;
             label3.Visible = false;
-
-
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -119,6 +119,27 @@ namespace CalculatorTeaM
 
             textBox2.Visible = true;
             label3.Visible = true;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            w = true;
+            fd = true;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
 
         public Form1()
@@ -133,13 +154,12 @@ namespace CalculatorTeaM
 
             this.ClientSize = new Size(10 * bw + 10 * dx, 9 * bh +  dy);
 
-
             label1.SetBounds(dx, dy, 8 * bw + 7 * dx, bh);
             label1.Text = "0";
 
             y = label1.Bottom + dy;
 
-
+ 
             int k = 0;
             for (int i = 0; i < 4; i++)
             {
@@ -214,13 +234,35 @@ namespace CalculatorTeaM
                 return;
             }
 
+            if (Convert.ToInt32(btn.Tag) == 0)//me
+            {
+                if (fd) label1.Text = btn.Text;
+                if (label1.Text != "0")
+                    label1.Text += btn.Text;
+                return;
+            }
+
+            // запятая
+            if (Convert.ToInt32(btn.Tag) == -1)//me
+            {
+                if (fd)
+                {
+                    label1.Text = "0,";
+                    fd = false;
+                }
+                else
+                    if (label1.Text.IndexOf(",") == -1)
+                    label1.Text += btn.Text;
+                return;
+            }
+
             if (Convert.ToInt32(btn.Tag) == -5)
             {
-                ac = 0; 
+                ac = 0; // очистить аккумулятор
                 op = 0;
                 label1.Text = "0";
-
-                fd = true; 
+                label2.Text = "";
+                fd = true; // снова ждем первую цифру
                 return;
             }
 
@@ -232,8 +274,6 @@ namespace CalculatorTeaM
 
                 n = Convert.ToDouble(label1.Text);
 
-                
-                
                 if (ac != 0)
                 {
                     switch (op)
@@ -248,7 +288,7 @@ namespace CalculatorTeaM
                             ac = n;
                             break;
                     }
-                    label1.Text = ac.ToString("N");
+                    label1.Text = ac.ToString();//me
                 }
                 else
                 {
