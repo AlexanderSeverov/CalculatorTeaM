@@ -29,194 +29,96 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.lbl_Indication = new System.Windows.Forms.TextBox();
+            this.btn_Start_Test = new System.Windows.Forms.Button();
+            this.tb_Test = new System.Windows.Forms.TextBox();
+            this.lbl_Test1 = new System.Windows.Forms.Label();
+            this.btn_Finish_Test = new System.Windows.Forms.Button();
+            this.lbl_Test2 = new System.Windows.Forms.Label();
+            this.lbl_History = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_Indication
             // 
-            this.label1.Location = new System.Drawing.Point(12, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(266, 20);
-            this.label1.TabIndex = 0;
+            this.lbl_Indication.Location = new System.Drawing.Point(12, 12);
+            this.lbl_Indication.Name = "lbl_Indication";
+            this.lbl_Indication.Size = new System.Drawing.Size(266, 20);
+            this.lbl_Indication.TabIndex = 0;
             // 
-            // button1
+            // btn_Start_Test
             // 
-            this.button1.Location = new System.Drawing.Point(12, 310);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Режим теста";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Start_Test.Location = new System.Drawing.Point(12, 373);
+            this.btn_Start_Test.Name = "btn_Start_Test";
+            this.btn_Start_Test.Size = new System.Drawing.Size(101, 23);
+            this.btn_Start_Test.TabIndex = 1;
+            this.btn_Start_Test.Text = "Режим теста";
+            this.btn_Start_Test.UseVisualStyleBackColor = true;
+            this.btn_Start_Test.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // tb_Test
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 339);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(202, 33);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Понажимайте на кнопки для теста \r\nНиже отобразится татус прохождения";
-            this.textBox1.Visible = false;
+            this.tb_Test.Location = new System.Drawing.Point(12, 402);
+            this.tb_Test.Multiline = true;
+            this.tb_Test.Name = "tb_Test";
+            this.tb_Test.ReadOnly = true;
+            this.tb_Test.Size = new System.Drawing.Size(202, 33);
+            this.tb_Test.TabIndex = 2;
+            this.tb_Test.Text = "Понажимайте на кнопки для теста \r\nНиже отобразится татус прохождения";
+            this.tb_Test.Visible = false;
             // 
-            // label2
+            // lbl_Test1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 373);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "waiting";
-            this.label2.Visible = false;
+            this.lbl_Test1.AutoSize = true;
+            this.lbl_Test1.Location = new System.Drawing.Point(54, 436);
+            this.lbl_Test1.Name = "lbl_Test1";
+            this.lbl_Test1.Size = new System.Drawing.Size(40, 13);
+            this.lbl_Test1.TabIndex = 3;
+            this.lbl_Test1.Text = "waiting";
+            this.lbl_Test1.Visible = false;
             // 
-            // button2
+            // btn_Finish_Test
             // 
-            this.button2.Location = new System.Drawing.Point(12, 402);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Выход из режима теста";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Finish_Test.Location = new System.Drawing.Point(12, 465);
+            this.btn_Finish_Test.Name = "btn_Finish_Test";
+            this.btn_Finish_Test.Size = new System.Drawing.Size(142, 23);
+            this.btn_Finish_Test.TabIndex = 4;
+            this.btn_Finish_Test.Text = "Выход из режима теста";
+            this.btn_Finish_Test.UseVisualStyleBackColor = true;
+            this.btn_Finish_Test.Visible = false;
+            this.btn_Finish_Test.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // lbl_Test2
             // 
-            this.button3.Location = new System.Drawing.Point(284, 139);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 37);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "cos";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.lbl_Test2.AutoSize = true;
+            this.lbl_Test2.Location = new System.Drawing.Point(54, 449);
+            this.lbl_Test2.Name = "lbl_Test2";
+            this.lbl_Test2.Size = new System.Drawing.Size(40, 13);
+            this.lbl_Test2.TabIndex = 12;
+            this.lbl_Test2.Text = "waiting";
+            this.lbl_Test2.Visible = false;
             // 
-            // button4
+            // lbl_History
             // 
-            this.button4.Location = new System.Drawing.Point(284, 182);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 37);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "sin";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(284, 225);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(90, 36);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "sqrt";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(284, 309);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(90, 34);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "^x";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Visible = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(284, 349);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.Visible = false;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(304, 372);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Степень";
-            this.label3.Visible = false;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(284, 268);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(90, 35);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Работа со степенью";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 386);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "waiting";
-            this.label4.Visible = false;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(284, 96);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(90, 37);
-            this.button8.TabIndex = 13;
-            this.button8.Text = "/";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.Location = new System.Drawing.Point(284, 53);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(90, 37);
-            this.button9.TabIndex = 14;
-            this.button9.Text = "*";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.lbl_History.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_History.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_History.Location = new System.Drawing.Point(284, 12);
+            this.lbl_History.Name = "lbl_History";
+            this.lbl_History.Size = new System.Drawing.Size(138, 23);
+            this.lbl_History.TabIndex = 15;
+            this.lbl_History.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 437);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(631, 531);
+            this.Controls.Add(this.lbl_History);
+            this.Controls.Add(this.lbl_Test2);
+            this.Controls.Add(this.btn_Finish_Test);
+            this.Controls.Add(this.lbl_Test1);
+            this.Controls.Add(this.tb_Test);
+            this.Controls.Add(this.btn_Start_Test);
+            this.Controls.Add(this.lbl_Indication);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -229,21 +131,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.TextBox lbl_Indication;
+        private System.Windows.Forms.Button btn_Start_Test;
+        private System.Windows.Forms.TextBox tb_Test;
+        private System.Windows.Forms.Label lbl_Test1;
+        private System.Windows.Forms.Button btn_Finish_Test;
+        private System.Windows.Forms.Label lbl_Test2;
+        private System.Windows.Forms.Label lbl_History;
     }
 }
 

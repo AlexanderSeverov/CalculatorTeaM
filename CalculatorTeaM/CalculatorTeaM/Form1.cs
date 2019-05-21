@@ -19,127 +19,50 @@ namespace CalculatorTeaM
         private const int bw = 50, bh = 50; 
         private const int dx = 19, dy = 17; 
 
-    
-        public Button[] btn = new Button[15];
+        public Button[] btn = new Button[24];
 
+        string[] btnText = {"y^x","/","*","-",
+                            "7"  ,"8","9","+",
+                            "4","5","6","cos",
+                            "1","2","3","sin",
+                            "0",",","C","Sqrt",
+                            "="," "," ", " "};
 
-        char[] btnText = {
-                          '7','8','9','+',
-                          '4','5','6','-',
-                          '1','2','3','=',
-                          '0',',','c'};
-
-
-        int[] btnTag = {
-                        7,8,9,-3,
-                        4,5,6,-4,
-                        1,2,3,-2,
-                        0,-1,-5};
+        int[] btnTag = {-11,-7,-6,-4,
+                          7, 8, 9,-3,
+                          4, 5, 6,-8,
+                          1, 2, 3,-9,
+                          0,-1,-5,-16
+                        -2,-14,-15,-13};
 
         private double ac = 0; 
         private int op = 0;
         public int z = 0; 
         public bool ch1=false;
 
-        Boolean w;
-
+        private double n; // число на индикаторе
+        
         private Boolean fd;
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//Test
         {
-            textBox1.Visible = true;
-            label2.Visible = true;
-            label1.Visible = false;
-            button2.Visible = true;
-            button1.Enabled = false;
-            label4.Visible = true;
+            tb_Test.Visible = true;
+            lbl_Test1.Visible = true;
+            lbl_Indication.Visible = false;
+            btn_Finish_Test.Visible = true;
+            btn_Start_Test.Enabled = false;
+            lbl_Test2.Visible = true;
             ch1 = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button1.Enabled = true;
-            textBox1.Visible = false;
-            label2.Visible = false;
-            label1.Text = "";
-            label1.Visible = true;
-            button2.Visible = false;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            double tmp = 0, tmp1 = 0;
-
-            tmp = Convert.ToDouble(label1.Text);
-            label1.Text = "";
-            tmp1 = Math.Sin(tmp);
-            label1.Text = Convert.ToString(tmp1);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            double tmp = 0,tmp1=0;
-
-            tmp = Convert.ToDouble(label1.Text);
-            label1.Text = "";
-            tmp1 = Math.Cos(tmp);
-            label1.Text = Convert.ToString(tmp1);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            double tmp = 0, tmp1 = 0;
-
-            tmp = Convert.ToDouble(label1.Text);
-            label1.Text = "";
-            tmp1 = Math.Sqrt(tmp);
-            label1.Text = Convert.ToString(tmp1);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            double tmp = 0, tmp1 = 0,tmp2=0;
-
-            tmp = Convert.ToDouble(label1.Text);
-
-            tmp1 = Convert.ToDouble(textBox2.Text);
-            tmp2 = Math.Pow(tmp,tmp1);
-
-            label1.Text = Convert.ToString(tmp2);
-
-            textBox2.Text = "";
-
-            textBox2.Visible = false;
-            label3.Visible = false;
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            button6.Visible = true;
-
-            textBox2.Visible = true;
-            label3.Visible = true;
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            w = true;
-            fd = true;
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            btn_Start_Test.Enabled = true;
+            tb_Test.Visible = false;
+            lbl_Test1.Visible = false;
+            lbl_Indication.Text = "";
+            lbl_Indication.Visible = true;
+            btn_Finish_Test.Visible = false;
         }
 
         public Form1()
@@ -147,33 +70,30 @@ namespace CalculatorTeaM
             InitializeComponent();
 
             fd = true;
-
-
             int x, y;
 
+            this.ClientSize = new Size(7 * bw + 4 * dx, 10 * bh +  dy);
 
-            this.ClientSize = new Size(10 * bw + 10 * dx, 9 * bh +  dy);
+            lbl_History.SetBounds(15 * dx, dy, 2 * bw + 3 * dx, 7 * bh);
 
-            label1.SetBounds(dx, dy, 8 * bw + 7 * dx, bh);
-            label1.Text = "0";
+            //label1.SetBounds(dx, dy, 8 * bw + 7 * dx, bh);
+            lbl_Indication.Text = "0";
 
-            y = label1.Bottom + dy;
-
- 
+            y = lbl_Indication.Bottom + dy;
             int k = 0;
-            for (int i = 0; i < 4; i++)
+
+            for (int i = 0; i < 6; i++)
             {
                 x = dx;
                 for (int j = 0; j < 4; j++)
                 {
-                    if (!((i == 3) && (j == 0)))
+                    if (!((i == 5) && (j == 0)))
                     {
 
                         btn[k] = new Button();
                         btn[k].SetBounds(x, y, bw, bh);
                         btn[k].Tag = btnTag[k];
                         btn[k].Text = btnText[k].ToString();
-
 
                         this.btn[k].Click += new System.EventHandler(this.Button_Click);
 
@@ -182,7 +102,6 @@ namespace CalculatorTeaM
 
                             btn[k].BackColor = SystemColors.ControlLight;
                         }
-
 
                         this.Controls.Add(this.btn[k]);
 
@@ -193,13 +112,11 @@ namespace CalculatorTeaM
                     {
 
                         btn[k] = new Button();
-                        btn[k].SetBounds(x, y, bw * 2 + dx, bh);
+                        btn[k].SetBounds(3*dx+2* bw, y, bw * 2 + dx, bh);
                         btn[k].Tag = btnTag[k];
                         btn[k].Text = btnText[k].ToString();
 
-
-                         this.btn[k].Click += new System.EventHandler(this.Button_Click);
-
+                        this.btn[k].Click += new System.EventHandler(this.Button_Click);
 
                         this.Controls.Add(this.btn[k]);
 
@@ -221,38 +138,49 @@ namespace CalculatorTeaM
 
             Button btn = (Button)sender;
 
-            if (Convert.ToInt32(btn.Tag) > 0)
+            //Sqrt
+            if (Convert.ToInt32(btn.Tag) == -16)
+            {
+                double tmp = 0, tmp1 = 0;
+
+                tmp = Convert.ToDouble(lbl_Indication.Text);
+                lbl_Indication.Text = "";
+                tmp1 = Math.Sqrt(tmp);
+                lbl_Indication.Text = Convert.ToString(tmp1);
+            }
+
+                if (Convert.ToInt32(btn.Tag) > 0)
             {
                 if (fd)
                 {
-       
-                    label1.Text = btn.Text;
+                    lbl_Indication.Text = btn.Text;
                     fd = false;
                 }
                 else
-                    label1.Text += btn.Text;
+                    lbl_Indication.Text += btn.Text;
                 return;
             }
 
             if (Convert.ToInt32(btn.Tag) == 0)//me
             {
-                if (fd) label1.Text = btn.Text;
-                if (label1.Text != "0")
-                    label1.Text += btn.Text;
+                if (fd) lbl_Indication.Text = btn.Text;
+                if (lbl_Indication.Text != "0")
+                    lbl_Indication.Text += btn.Text;
                 return;
             }
 
+           
             // запятая
             if (Convert.ToInt32(btn.Tag) == -1)//me
             {
                 if (fd)
                 {
-                    label1.Text = "0,";
+                    lbl_Indication.Text = "0,";
                     fd = false;
                 }
                 else
-                    if (label1.Text.IndexOf(",") == -1)
-                    label1.Text += btn.Text;
+                    if (lbl_Indication.Text.IndexOf(",") == -1)
+                    lbl_Indication.Text += btn.Text;
                 return;
             }
 
@@ -260,10 +188,46 @@ namespace CalculatorTeaM
             {
                 ac = 0; // очистить аккумулятор
                 op = 0;
-                label1.Text = "0";
-                label2.Text = "";
+                lbl_Indication.Text = "0";
+                lbl_History.Text = "";
                 fd = true; // снова ждем первую цифру
                 return;
+            }
+
+            //+
+            if (Convert.ToInt32(btn.Tag) == -3)
+            {
+                fd = false;
+                lbl_History.Text = lbl_Indication.Text + " + ";
+            }
+
+            //-
+            if (Convert.ToInt32(btn.Tag) == -4)
+            {
+                fd = false;
+                lbl_History.Text = lbl_Indication.Text + " - ";
+            }
+
+            //*
+            if (Convert.ToInt32(btn.Tag) == -6)
+            {
+                fd = false;
+                lbl_History.Text = lbl_Indication.Text + " * ";
+            }
+
+            // /
+            if (Convert.ToInt32(btn.Tag) == -7)
+            {
+                fd = false;
+                lbl_History.Text = lbl_Indication.Text + " / ";
+            }
+
+            //=
+            if (Convert.ToInt32(btn.Tag) == -2)
+            {
+                string T = lbl_Indication.Text;
+                n = Convert.ToDouble(lbl_Indication.Text);
+                fd = false; 
             }
 
             if (Convert.ToInt32(btn.Tag) < -1)
@@ -272,9 +236,9 @@ namespace CalculatorTeaM
 
                 z = Convert.ToInt32(btn.Tag);
 
-                n = Convert.ToDouble(label1.Text);
+                n = Convert.ToDouble(lbl_Indication.Text);
 
-                if (ac != 0)
+                if (ac != 0 )
                 {
                     switch (op)
                     {
@@ -287,8 +251,29 @@ namespace CalculatorTeaM
                         case -2:
                             ac = n;
                             break;
+                        case -6:
+                            ac *= n;
+                            break;
+                        case -7:
+                            ac /= n;
+                            break;
+                        case -8:
+                            ac = Math.Cos(ac);
+                            break;
+                        case -9:
+                            ac = Math.Sin(ac);
+                            break;
+                        case -11:
+                            ac = Math.Pow(ac,n);
+                            break;
+                        
                     }
-                    label1.Text = ac.ToString();//me
+
+
+
+
+                    lbl_Indication.Text = ac.ToString();//me
+                    lbl_History.Text += n + " = " + ac;//перенос строки надо закончить
                 }
                 else
                 {

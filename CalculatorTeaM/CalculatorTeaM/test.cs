@@ -16,20 +16,20 @@ namespace CalculatorTeaM
                 
                 if (op == (-3) & z < -1)
                 {                
-                  label2.Text = "test complete";
-                  label4.Text = Convert.ToString(btnText[3]);
+                  lbl_Test1.Text = "test complete";
+                  lbl_Test2.Text = Convert.ToString(btnText[3]);
                 }
 
                if (op == (-4) & z < -1)
               {
-                label2.Text = "test complete";
-                label4.Text = Convert.ToString(btnText[7]);
+                lbl_Test1.Text = "test complete";
+                lbl_Test2.Text = Convert.ToString(btnText[7]);
                }
 
              if (op == (-2) & z < -1)
                {
-                label2.Text = "test complete";
-                label4.Text = Convert.ToString(btnText[11]);
+                lbl_Test1.Text = "test complete";
+                lbl_Test2.Text = Convert.ToString(btnText[11]);
                }
 
 
