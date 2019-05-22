@@ -100,6 +100,7 @@
             // lbl_History
             // 
             this.lbl_History.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_History.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_History.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_History.Location = new System.Drawing.Point(284, 12);
             this.lbl_History.Name = "lbl_History";

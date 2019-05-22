@@ -28,12 +28,12 @@ namespace CalculatorTeaM
                             "0",",","C","Sqrt",
                             "="," "," ", " "};
 
-        int[] btnTag = {-11,-7,-6,-4,
+        int[] btnTag = {-10,-7,-6,-4,
                           7, 8, 9,-3,
                           4, 5, 6,-8,
                           1, 2, 3,-9,
-                          0,-1,-5,-16
-                        -2,-14,-15,-13};
+                          0,-1,-5,-11
+                        -2,-12,-13,-14};
 
         private double ac = 0; 
         private int op = 0;
@@ -72,11 +72,10 @@ namespace CalculatorTeaM
             fd = true;
             int x, y;
 
-            this.ClientSize = new Size(7 * bw + 4 * dx, 10 * bh +  dy);
+            this.ClientSize = new Size(7 * bw + 5 * dx, 10 * bh +  dy);
 
             lbl_History.SetBounds(15 * dx, dy, 2 * bw + 3 * dx, 7 * bh);
-
-            //label1.SetBounds(dx, dy, 8 * bw + 7 * dx, bh);
+            
             lbl_Indication.Text = "0";
 
             y = lbl_Indication.Bottom + dy;
@@ -139,7 +138,7 @@ namespace CalculatorTeaM
             Button btn = (Button)sender;
 
             //Sqrt
-            if (Convert.ToInt32(btn.Tag) == -16)
+            if (Convert.ToInt32(btn.Tag) == -11)
             {
                 double tmp = 0, tmp1 = 0;
 
@@ -149,7 +148,27 @@ namespace CalculatorTeaM
                 lbl_Indication.Text = Convert.ToString(tmp1);
             }
 
-                if (Convert.ToInt32(btn.Tag) > 0)
+            if (Convert.ToInt32(btn.Tag) == -9)
+            {
+                double tmp = 0, tmp1 = 0;
+
+                tmp = Convert.ToDouble(lbl_Indication.Text);
+                lbl_Indication.Text = "";
+                tmp1 = Math.Sin(tmp);
+                lbl_Indication.Text = Convert.ToString(tmp1);
+            }
+
+            if (Convert.ToInt32(btn.Tag) == -8)
+            {
+                double tmp = 0, tmp1 = 0;
+
+                tmp = Convert.ToDouble(lbl_Indication.Text);
+                lbl_Indication.Text = "";
+                tmp1 = Math.Cos(tmp);
+                lbl_Indication.Text = Convert.ToString(tmp1);
+            }
+
+            if (Convert.ToInt32(btn.Tag) > 0)
             {
                 if (fd)
                 {
@@ -222,6 +241,27 @@ namespace CalculatorTeaM
                 lbl_History.Text = lbl_Indication.Text + " / ";
             }
 
+            // x^y
+            if (Convert.ToInt32(btn.Tag) == -10)
+            {
+                fd = false;
+                lbl_History.Text = lbl_Indication.Text + " ^ ";
+            }
+
+            // SIN
+            if (Convert.ToInt32(btn.Tag) == -9)
+            {
+                fd = false;
+                lbl_History.Text = "Sin = " + lbl_Indication.Text;
+            }
+
+            // SIN
+            if (Convert.ToInt32(btn.Tag) == -8)
+            {
+                fd = false;
+                lbl_History.Text = "Cos = " + lbl_Indication.Text;
+            }
+
             //=
             if (Convert.ToInt32(btn.Tag) == -2)
             {
@@ -257,21 +297,10 @@ namespace CalculatorTeaM
                         case -7:
                             ac /= n;
                             break;
-                        case -8:
-                            ac = Math.Cos(ac);
-                            break;
-                        case -9:
-                            ac = Math.Sin(ac);
-                            break;
-                        case -11:
+                        case -10:
                             ac = Math.Pow(ac,n);
                             break;
-                        
                     }
-
-
-
-
                     lbl_Indication.Text = ac.ToString();//me
                     lbl_History.Text += n + " = " + ac;//перенос строки надо закончить
                 }
