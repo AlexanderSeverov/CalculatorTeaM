@@ -40,6 +40,7 @@ namespace CalculatorTeaM
         public int z = 0; 
         public bool ch1=false;
         public int transchose = 0;
+        public string transchosepic="";
 
         private double n; // число на индикаторе
         
@@ -135,6 +136,7 @@ namespace CalculatorTeaM
             Button btn = (Button)sender;
 
             transchose = Convert.ToInt32(btn.Tag);
+            transchosepic = Convert.ToString(btnText);
 
             if (ch1 == true)
             {

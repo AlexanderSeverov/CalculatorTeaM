@@ -10,15 +10,24 @@ namespace CalculatorTeaM
 {
     public partial class Form1 : Form
     {
-        
-            public void test()
+
+        public void test()
+        {
+
+            if (op == (-4) & z < -1)
             {
-                
-              if (op == (-4) & z < -1)
-                {                
-                  lbl_Test1.Text = "test complete";
-                  lbl_Test2.Text = Convert.ToString(btnText[3]);
-                }
+                //string tmp = Convert.ToString(btnText[3]);
+
+                //if (transchosepic != tmp)
+                //{
+                //    lbl_Test1.Text = "test failed";
+                //    //continue;
+                //}
+
+                lbl_Test1.Text = "test complete";
+                lbl_Test2.Text = Convert.ToString(btnText[3]);
+            }
+
            
 
              if (op == (-3) & z < -1)
@@ -78,7 +87,19 @@ namespace CalculatorTeaM
                 lbl_Test1.Text = "test complete";
                 lbl_Test2.Text = Convert.ToString(btnText[11]);
             }
-           
+
+            if (transchose == (-5))
+            {
+                lbl_Test1.Text = "test complete";
+                lbl_Test2.Text = Convert.ToString(btnText[18]);
+            }
+
+            if (transchose == (-1))
+            {
+                lbl_Test1.Text = "test complete";
+                lbl_Test2.Text = Convert.ToString(btnText[17]);
+            }
+
 
 
 
