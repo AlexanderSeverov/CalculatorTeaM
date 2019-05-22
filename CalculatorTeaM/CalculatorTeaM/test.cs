@@ -19,63 +19,67 @@ namespace CalculatorTeaM
                   lbl_Test1.Text = "test complete";
                   lbl_Test2.Text = Convert.ToString(btnText[3]);
                 }
-              else
-                {
-                lbl_Test1.Text = "test failed";
-                 }
+           
 
              if (op == (-3) & z < -1)
                {
                 lbl_Test1.Text = "test complete";
                 lbl_Test2.Text = Convert.ToString(btnText[7]);
                }
-               else
-                   {
-                lbl_Test1.Text = "test failed";
-                 }
+              
 
             if (transchose == (-2))
                {
                 lbl_Test1.Text = "test complete";
                 lbl_Test2.Text = Convert.ToString(btnText[20]);
                }
-            else
-            {
-                lbl_Test1.Text = "test failed";
-            }
+           
 
             if (op == (-6) & z < -1)
                {
                 lbl_Test1.Text = "test complete";
                 lbl_Test2.Text = Convert.ToString(btnText[2]);
                }
-            else
-              {
-                lbl_Test1.Text = "test failed";
-              }
+            
 
             if (op == (-7) & z < -1)
               {
                 lbl_Test1.Text = "test complete";
                 lbl_Test2.Text = Convert.ToString(btnText[1]);
               }
-            else
-               {
-                lbl_Test1.Text = "test failed";
-               }
+            
 
             if (op == (-10) & z < -1)
               {
                 lbl_Test1.Text = "test complete";
                 lbl_Test2.Text = Convert.ToString(btnText[0]);
               }
-              else
-             {
-                lbl_Test1.Text = "test failed";
-              }
+            
 
 
-    
+            if (transchose == (-11))
+            {
+                lbl_Test1.Text = "test complete";
+                lbl_Test2.Text = Convert.ToString(btnText[19]);
+            }
+           
+
+
+            if (transchose == (-9))
+            {
+                lbl_Test1.Text = "test complete";
+                lbl_Test2.Text = Convert.ToString(btnText[15]);
+            }
+           
+
+
+            if (transchose == (-8))
+            {
+                lbl_Test1.Text = "test complete";
+                lbl_Test2.Text = Convert.ToString(btnText[11]);
+            }
+           
+
 
 
         }
