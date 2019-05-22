@@ -47,7 +47,7 @@
             // 
             // btn_Start_Test
             // 
-            this.btn_Start_Test.Location = new System.Drawing.Point(12, 373);
+            this.btn_Start_Test.Location = new System.Drawing.Point(12, 396);
             this.btn_Start_Test.Name = "btn_Start_Test";
             this.btn_Start_Test.Size = new System.Drawing.Size(101, 23);
             this.btn_Start_Test.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // tb_Test
             // 
-            this.tb_Test.Location = new System.Drawing.Point(12, 402);
+            this.tb_Test.Location = new System.Drawing.Point(12, 425);
             this.tb_Test.Multiline = true;
             this.tb_Test.Name = "tb_Test";
             this.tb_Test.ReadOnly = true;
@@ -69,7 +69,7 @@
             // lbl_Test1
             // 
             this.lbl_Test1.AutoSize = true;
-            this.lbl_Test1.Location = new System.Drawing.Point(54, 436);
+            this.lbl_Test1.Location = new System.Drawing.Point(54, 459);
             this.lbl_Test1.Name = "lbl_Test1";
             this.lbl_Test1.Size = new System.Drawing.Size(40, 13);
             this.lbl_Test1.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             // btn_Finish_Test
             // 
-            this.btn_Finish_Test.Location = new System.Drawing.Point(12, 465);
+            this.btn_Finish_Test.Location = new System.Drawing.Point(12, 488);
             this.btn_Finish_Test.Name = "btn_Finish_Test";
             this.btn_Finish_Test.Size = new System.Drawing.Size(142, 23);
             this.btn_Finish_Test.TabIndex = 4;
@@ -90,7 +90,7 @@
             // lbl_Test2
             // 
             this.lbl_Test2.AutoSize = true;
-            this.lbl_Test2.Location = new System.Drawing.Point(54, 449);
+            this.lbl_Test2.Location = new System.Drawing.Point(54, 472);
             this.lbl_Test2.Name = "lbl_Test2";
             this.lbl_Test2.Size = new System.Drawing.Size(40, 13);
             this.lbl_Test2.TabIndex = 12;

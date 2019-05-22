@@ -14,30 +14,68 @@ namespace CalculatorTeaM
             public void test()
             {
                 
-                if (op == (-3) & z < -1)
+              if (op == (-4) & z < -1)
                 {                
                   lbl_Test1.Text = "test complete";
                   lbl_Test2.Text = Convert.ToString(btnText[3]);
                 }
+              else
+                {
+                lbl_Test1.Text = "test failed";
+                 }
 
-               if (op == (-4) & z < -1)
-              {
+             if (op == (-3) & z < -1)
+               {
                 lbl_Test1.Text = "test complete";
                 lbl_Test2.Text = Convert.ToString(btnText[7]);
                }
+               else
+                   {
+                lbl_Test1.Text = "test failed";
+                 }
 
-             if (op == (-2) & z < -1)
+            if (transchose == (-2))
                {
                 lbl_Test1.Text = "test complete";
-                lbl_Test2.Text = Convert.ToString(btnText[11]);
+                lbl_Test2.Text = Convert.ToString(btnText[20]);
+               }
+            else
+            {
+                lbl_Test1.Text = "test failed";
+            }
+
+            if (op == (-6) & z < -1)
+               {
+                lbl_Test1.Text = "test complete";
+                lbl_Test2.Text = Convert.ToString(btnText[2]);
+               }
+            else
+              {
+                lbl_Test1.Text = "test failed";
+              }
+
+            if (op == (-7) & z < -1)
+              {
+                lbl_Test1.Text = "test complete";
+                lbl_Test2.Text = Convert.ToString(btnText[1]);
+              }
+            else
+               {
+                lbl_Test1.Text = "test failed";
                }
 
+            if (op == (-10) & z < -1)
+              {
+                lbl_Test1.Text = "test complete";
+                lbl_Test2.Text = Convert.ToString(btnText[0]);
+              }
+              else
+             {
+                lbl_Test1.Text = "test failed";
+              }
 
-            //if ((Convert.ToString(btnText[14]) == "c"))
-            //{
-            //    label2.Text = "test complete";
-            //    label4.Text = Convert.ToString(btnText[14]);
-            //}
+
+    
 
 
         }

@@ -32,13 +32,14 @@ namespace CalculatorTeaM
                           7, 8, 9,-3,
                           4, 5, 6,-8,
                           1, 2, 3,-9,
-                          0,-1,-5,-11
+                          0,-1,-5,-11,
                         -2,-12,-13,-14};
 
         private double ac = 0; 
         private int op = 0;
         public int z = 0; 
         public bool ch1=false;
+        public int transchose = 0;
 
         private double n; // число на индикаторе
         
@@ -60,6 +61,7 @@ namespace CalculatorTeaM
             btn_Start_Test.Enabled = true;
             tb_Test.Visible = false;
             lbl_Test1.Visible = false;
+            lbl_Test2.Visible = false;
             lbl_Indication.Text = "";
             lbl_Indication.Visible = true;
             btn_Finish_Test.Visible = false;
@@ -130,13 +132,16 @@ namespace CalculatorTeaM
 
         private void Button_Click(object sender, System.EventArgs e)
         {
+            Button btn = (Button)sender;
+
+            transchose = Convert.ToInt32(btn.Tag);
+
             if (ch1 == true)
             {
                 test();
             }
 
-            Button btn = (Button)sender;
-
+           
             //Sqrt
             if (Convert.ToInt32(btn.Tag) == -11)
             {
