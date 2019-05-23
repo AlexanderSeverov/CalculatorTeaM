@@ -39,8 +39,13 @@ namespace CalculatorTeaM
         private int op = 0;
         public int z = 0; 
         public bool ch1=false;
+        public bool checkT = false;
+        public bool checkT1 = false;
+        public int chtest = 0;
         public int transchose = 0;
         public string transchosepic="";
+        public int inum=0;
+        public int inum2=0;
        
 
         private double n; // число на индикаторе
@@ -55,6 +60,7 @@ namespace CalculatorTeaM
             btn_Finish_Test.Visible = true;
             btn_Start_Test.Enabled = false;
             lbl_Test2.Visible = true;
+            button1.Visible = true;
             ch1 = true;
         }
 
@@ -67,9 +73,15 @@ namespace CalculatorTeaM
             lbl_Indication.Text = "";
             lbl_Indication.Visible = true;
             btn_Finish_Test.Visible = false;
+            button1.Visible = false;
+            ch1 = false;
         }
 
-       
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            checkT1 = true;
+            Button_Click(sender,e);
+        }
 
         public Form1()
         {
@@ -136,7 +148,15 @@ namespace CalculatorTeaM
 
         private void Button_Click(object sender, System.EventArgs e)
         {
+            n = Convert.ToDouble(lbl_Indication.Text);
+            //   double n;
             Button btn = (Button)sender;
+
+            if (checkT1 == true)
+            {
+                btn.Tag = zf;
+                test1();
+            }
 
             transchose = Convert.ToInt32(btn.Tag);
             transchosepic = Convert.ToString(btnText);
@@ -282,11 +302,11 @@ namespace CalculatorTeaM
 
             if (Convert.ToInt32(btn.Tag) < -1)
             {
-                double n;
+                
 
                 z = Convert.ToInt32(btn.Tag);
 
-                n = Convert.ToDouble(lbl_Indication.Text);
+              //  n = Convert.ToDouble(lbl_Indication.Text);
 
                 if (ac != 0 )
                 {
@@ -311,8 +331,14 @@ namespace CalculatorTeaM
                             ac = Math.Pow(ac,n);
                             break;
                     }
-                    lbl_Indication.Text = ac.ToString();//me
-                    lbl_History.Text += n + " = " + ac;//перенос строки надо закончить
+                    if (checkT1 == true)
+                    {
+                    }
+                    else
+                    {
+                        lbl_Indication.Text = ac.ToString();//me
+                        lbl_History.Text += n + " = " + ac;//перенос строки надо закончить
+                    }
                 }
                 else
                 {
@@ -321,6 +347,94 @@ namespace CalculatorTeaM
 
                 op = Convert.ToInt32(btn.Tag); 
                 fd = true; // 
+                if (checkT1 == true)
+                {
+
+                    if (inum == 1)
+                    {
+                        if ((inum == 1) & (ac == 13))
+                        {
+                            checkT = true;
+                        }
+                        else
+                        {
+                            checkT = false;
+                            inum2++;
+                            MessageBox.Show("Ошибка сложения");
+                        }
+                    }
+
+                    if (inum == 2)
+                    {
+                        if ((inum == 2) & (ac == -5))
+                        {
+                            checkT = true;
+                        }
+                        else
+                        {
+                            checkT = false;
+                            inum2++;
+                            MessageBox.Show("Ошибка вычитания");
+                        }
+                    }
+
+                    if (inum == 3)
+                    {
+                        if ((inum == 3) & (ac == 36))
+                        {
+                            checkT = true;
+                        }
+                        else
+                        {
+                            checkT = false;
+                            inum2++;
+                            MessageBox.Show("Ошибка умножения");
+                        }
+                    }
+
+                    if (inum == 4)
+                    {
+                        if ((inum == 4) & (ac == 0.44))
+                        {
+                            checkT = true;
+                        }
+                        else
+                        {
+                            checkT = false;
+                            inum2++;
+                            MessageBox.Show("Ошибка деления");
+                        }
+                    }
+
+                    if (inum == 5)
+                    {
+                        if ((inum == 5) & (ac == 262144))
+                        {
+                            checkT = true;
+                        }
+                        else
+                        {
+                            checkT = false;
+                            inum2++;
+                            MessageBox.Show("Ошибка дроби");
+                        }
+                    }
+
+                    if (checkT == false)
+                    {
+                        MessageBox.Show("Test failed");
+                        checkT1 = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Test complet");
+                        checkT1 = false;
+                    }
+                }
+                else
+                {
+                }
+          
             }
         }
     }

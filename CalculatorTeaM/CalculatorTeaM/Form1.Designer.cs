@@ -36,6 +36,7 @@
             this.btn_Finish_Test = new System.Windows.Forms.Button();
             this.lbl_Test2 = new System.Windows.Forms.Label();
             this.lbl_History = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Indication
@@ -108,11 +109,23 @@
             this.lbl_History.TabIndex = 15;
             this.lbl_History.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(178, 488);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Проверка алгоритма работы";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 531);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_History);
             this.Controls.Add(this.lbl_Test2);
             this.Controls.Add(this.btn_Finish_Test);
@@ -125,7 +138,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Калькулятор";
-          
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +152,7 @@
         private System.Windows.Forms.Button btn_Finish_Test;
         private System.Windows.Forms.Label lbl_Test2;
         private System.Windows.Forms.Label lbl_History;
+        private System.Windows.Forms.Button button1;
     }
 }
 
