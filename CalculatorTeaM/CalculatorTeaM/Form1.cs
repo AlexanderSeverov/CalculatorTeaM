@@ -46,6 +46,16 @@ namespace CalculatorTeaM
         
         private Boolean fd;
 
+        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        //{
+        //    if (keyData == (Keys.D1))
+        //    {
+        //        // button1.PerformClick();
+        //        lbl_Indication.Text = "Ye ";
+        //    }
+        //    return base.ProcessCmdKey(ref msg, keyData);
+        //}
+
         private void button1_Click(object sender, EventArgs e)//Test
         {
             tb_Test.Visible = true;
@@ -66,6 +76,11 @@ namespace CalculatorTeaM
             lbl_Indication.Text = "";
             lbl_Indication.Visible = true;
             btn_Finish_Test.Visible = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
         }
 
         public Form1()
@@ -130,7 +145,7 @@ namespace CalculatorTeaM
                 y = y + bh + dy;
             }
         }
-
+        
         private void Button_Click(object sender, System.EventArgs e)
         {
             Button btn = (Button)sender;
@@ -142,8 +157,7 @@ namespace CalculatorTeaM
             {
                 test();
             }
-
-           
+            
             //Sqrt
             if (Convert.ToInt32(btn.Tag) == -11)
             {
@@ -174,7 +188,7 @@ namespace CalculatorTeaM
                 tmp1 = Math.Cos(tmp);
                 lbl_Indication.Text = Convert.ToString(tmp1);
             }
-
+            
             if (Convert.ToInt32(btn.Tag) > 0)
             {
                 if (fd)
@@ -186,7 +200,7 @@ namespace CalculatorTeaM
                     lbl_Indication.Text += btn.Text;
                 return;
             }
-
+            
             if (Convert.ToInt32(btn.Tag) == 0)//me
             {
                 if (fd) lbl_Indication.Text = btn.Text;
@@ -195,7 +209,6 @@ namespace CalculatorTeaM
                 return;
             }
 
-           
             // запятая
             if (Convert.ToInt32(btn.Tag) == -1)//me
             {
@@ -320,5 +333,6 @@ namespace CalculatorTeaM
                 fd = true; // 
             }
         }
+
     }
 }

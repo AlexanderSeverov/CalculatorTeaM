@@ -54,6 +54,7 @@
             this.btn_Start_Test.Text = "Режим теста";
             this.btn_Start_Test.UseVisualStyleBackColor = true;
             this.btn_Start_Test.Click += new System.EventHandler(this.button1_Click);
+            
             // 
             // tb_Test
             // 
@@ -125,6 +126,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Калькулятор";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
